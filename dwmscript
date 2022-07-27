@@ -1,0 +1,52 @@
+i#!/bin/sh
+
+userresources=$HOME/.Xresources
+
+
+#Notifications and statusbar
+killall wired
+wired -r &
+killall dwmblocks
+
+#Nice Ones
+eww daemon &
+
+#Apps
+picom --experimental-backends &
+
+xsetroot -cursor_name left_ptr &
+# numlockx on &
+
+#easyeffects --gapplication-service &
+
+#--
+
+
+#polikit-gnome
+
+/usr/lib/polkit-kde-authentication-agent-1 &
+
+#statusbar
+sh /home/aluman/.dwm/bar/bar.sh 2>&1 >/dev/null &
+
+
+#THis hide the mouse after three second
+unclutter --timeout 3 &
+
+#clipmenud
+systemctl --user import-environment DISPLAY &
+clipmenud &
+
+#compoisoter
+xset r rate 250 50 &
+#picom -f &
+
+
+#wallpaper
+
+feh --randomize --bg-fill /home/aluman/wallpaper/ &
+
+#/usr/local/bin/setbg &
+
+#Execute dwm
+while type dwm >/dev/null; do dwm && continue || break; done
