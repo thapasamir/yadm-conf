@@ -52,7 +52,9 @@ export LC_ALL="en_US.UTF-8"
 # Exports
 export VISUAL="vim"
 export EDITOR="$VISUAL"
+export PATH="/home/aluman/.local/bin:$PATH"
 export PATH="/home/samir/.cargo/bin:$PATH"
+export PATH="/home/aluman/.local/share/gem/ruby/3.0.0/bin:$PATH"
 # Term
 switch "$TERM_EMULATOR"
 case '*kitty*'
@@ -62,7 +64,9 @@ case '*'
 end
 
 # User abbreviations
+abbr -a -g jj 'jupyter notebook ~/storage/jp/'
 abbr -a -g py 'python3'
+abbr -a -g mk 'mechvibes --no-sandbox'
 abbr -a -g fb 'brave facebook.com'
 abbr -a -g ytb 'brave youtube.com'
 abbr -a -g nvimc 'nvim ~/.config/nvim'
